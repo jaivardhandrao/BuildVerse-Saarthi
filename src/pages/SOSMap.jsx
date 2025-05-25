@@ -517,7 +517,7 @@ const SOSMap = () => {
             <MapContainer
               center={[20.5937, 78.9629]} // Center of India
               zoom={5}
-              style={{ height: '100%', width: '100%' }}
+              style={{ height: '100%', width: '100%' ,zIndex: 1  }}
               scrollWheelZoom={true}
             >
               <TileLayer

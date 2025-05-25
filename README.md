@@ -97,10 +97,9 @@ Saarthi is a cutting-edge disaster relief platform designed to bridge the commun
 ### Installation
 
 1. **Clone the repository**
-```
   - git clone https://github.com/yourusername/saarthi.git
   - cd saarthi
-```
+  
 2. **Install dependencies**
  - npm install
 

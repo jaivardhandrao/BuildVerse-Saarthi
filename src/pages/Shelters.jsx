@@ -801,7 +801,7 @@ const Shelters = () => {
             <MapContainer
               center={[20.5937, 78.9629]} // Always start with India center
               zoom={5}
-              style={{ height: '100%', width: '100%' }}
+              style={{ height: '100%', width: '100%' , zIndex: 1   }}
               scrollWheelZoom={true}
             >
               <TileLayer
@@ -886,56 +886,6 @@ const Shelters = () => {
           </div>
         </div>
 
-        {/* Rest of your component remains the same... */}
-        {/* Shelter List */}
-        {/* <div className="mt-8">
-          <h2 className="text-2xl font-bold text-blue-600 mb-6">Available Shelters</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredShelters.map((shelter) => (
-              <div
-                key={shelter.id}
-                className={`bg-white rounded-lg shadow-md p-6 border transition-all cursor-pointer hover:shadow-lg ${
-                  selectedShelter?.id === shelter.id
-                    ? 'border-blue-500 ring-2 ring-blue-200'
-                    : 'border-gray-200 hover:border-blue-300'
-                }`}
-                onClick={() => handleShelterClick(shelter)}
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="font-semibold text-gray-800 text-lg">
-                    {shelter.name}
-                  </h3>
-                  <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                    shelter.type === 'Emergency Shelter' ? 'bg-red-100 text-red-700' :
-                    shelter.type === 'Medical Care' ? 'bg-green-100 text-green-700' :
-                    shelter.type === 'Food' ? 'bg-yellow-100 text-yellow-700' :
-                    'bg-blue-100 text-blue-700'
-                  }`}>
-                    {shelter.type}
-                  </span>
-                </div>
-                
-                <div className="space-y-2 text-sm text-gray-600">
-                  <p><span className="font-medium">📍</span> {shelter.address}</p>
-                  <p><span className="font-medium">🏛️</span> {shelter.city}, {shelter.state}</p>
-                  <p><span className="font-medium">👥</span> Capacity: {shelter.capacity} people</p>
-                  <p><span className="font-medium">📞</span> {shelter.phone}</p>
-                  <p><span className="font-medium">🛠️</span> {shelter.services}</p>
-                </div>
-                
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleShelterClick(shelter);
-                  }}
-                  className="mt-4 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm"
-                >
-                  View on Google Maps
-                </button>
-              </div>
-            ))}
-          </div>
-        </div> */}
 
         {/* Emergency Contact */}
         <div className="mt-8 bg-red-50 rounded-xl p-6 border border-red-200">
