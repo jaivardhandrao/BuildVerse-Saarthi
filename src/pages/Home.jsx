@@ -84,14 +84,16 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
+    <div className="min-h-screen mt-[2rem] bg-gradient-to-tl from-blue-50 to-blue-200" style={{
+      background: "linear-gradient(225deg, rgba(230,242,255,1) 0%, rgba(176,224,230,1) 100%)"
+    }}>
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4" id='custom-font'>
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">
             Saarthi
           </h1>
-          <p className="text-xl text-gray-700 mb-12">
+          <p className="text-xl font-bold text-gray-700 mb-12">
             Your companion in times of need. Together, we make disaster relief more efficient and accessible.
           </p>
         </div>

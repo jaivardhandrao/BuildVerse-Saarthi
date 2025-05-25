@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
 }
+
+#custom-font{
+    font-family: 'Pacifico', cursive;
+}
+
+
 
 /* @layer base {
   body {
