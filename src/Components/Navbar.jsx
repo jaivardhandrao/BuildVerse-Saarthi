@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../Contexts/ThemeContext';
-
+import Logo from './Logo';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showCallPopup, setShowCallPopup] = useState(false);
@@ -27,7 +27,8 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <img className="h-8 mx-[5px]" src="/public/logo.png" alt="our_logo"/>
+              {/* <img className="h-8 mx-[5px]" src="/public/logo.png" alt="our_logo"/> */}
+              <Logo/>
               <Link to="/" className="flex-shrink-0 flex items-center">
                 <span id='custom-font' className="text-2xl font-bold text-orange-400">Saarthi</span>
               </Link>
