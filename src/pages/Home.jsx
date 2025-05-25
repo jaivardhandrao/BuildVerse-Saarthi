@@ -106,7 +106,7 @@ const Home = () => {
             <p className="text-red-600">Send an emergency request for immediate assistance</p>
           </Link>
 
-          <Link to="/volunteer" className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow text-blue-700 border border-blue-200 hover:border-blue-300">
+          <Link to="/volunteers" className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow text-blue-700 border border-blue-200 hover:border-blue-300">
             <div className="text-4xl mb-4">👥</div>
             <h3 className="text-xl font-semibold mb-2">I'm a Volunteer</h3>
             <p className="text-gray-600">Join our network of volunteers and help those in need</p>
