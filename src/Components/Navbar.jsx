@@ -27,7 +27,6 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              {/* <img className="h-8 mx-[5px]" src="/public/logo.png" alt="our_logo"/> */}
               <Logo/>
               <Link to="/" className="flex-shrink-0 flex items-center">
                 <span id='custom-font' className="text-2xl font-bold text-orange-400">Saarthi</span>
@@ -40,6 +39,7 @@ const Navbar = () => {
               <Link to="/shelters" className="text-slate-200 hover:text-orange-300 font-medium transition-colors duration-200 border-b-2 border-transparent hover:border-orange-300">Nearby Shelters</Link>
               <Link to="/sos" className="text-slate-200 hover:text-orange-300 font-medium transition-colors duration-200 border-b-2 border-transparent hover:border-orange-300">Raise SOS</Link>
               <Link to="/volunteers" className="text-slate-200 hover:text-orange-300 font-medium transition-colors duration-200 border-b-2 border-transparent hover:border-orange-300">For Volunteers</Link>
+              
               
               {/* Emergency Button - Desktop */}
               <button

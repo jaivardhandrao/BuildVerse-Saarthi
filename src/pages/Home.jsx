@@ -34,8 +34,7 @@ const Home = () => {
           };
         });
 
-        // Fetch weather alerts from OpenWeatherMap (you'll need API key)
-        // For demo, using mock weather data
+        // Fetch weather alerts
         const weatherAlerts = [
           {
             id: 'weather-1',

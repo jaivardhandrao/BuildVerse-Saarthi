@@ -153,7 +153,6 @@ const SOSRequest = () => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} noValidate>
-            {/* Issue Type - Clickable Boxes */}
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">Issue Type</label>
               <div className="grid grid-cols-2 gap-3">
@@ -197,7 +196,6 @@ const SOSRequest = () => {
               {errors.description && <p className="text-red-600 text-sm mt-1">{errors.description}</p>}
             </div>
 
-            {/* Contact Number */}
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">Contact Number</label>
               <input
@@ -211,7 +209,6 @@ const SOSRequest = () => {
               {errors.contact && <p className="text-red-600 text-sm mt-1">{errors.contact}</p>}
             </div>
 
-            {/* Urgency Level */}
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">Urgency Level</label>
               <div className="flex flex-wrap gap-4">
@@ -237,7 +234,7 @@ const SOSRequest = () => {
               {errors.urgency && <p className="text-red-600 text-sm mt-1">{errors.urgency}</p>}
             </div>
 
-            {/* Location */}
+
             <div className="mb-6">
               <button
                 type="button"
@@ -261,14 +258,14 @@ const SOSRequest = () => {
               )}
             </div>
 
-            {/* Submit Error Display */}
+
             {errors.submit && (
               <div className="mb-4 text-red-600 text-center font-semibold bg-red-50 p-4 rounded-lg border border-red-200">
                 {errors.submit}
               </div>
             )}
 
-            {/* Submit Button */}
+
             <button
               type="submit"
               disabled={submitting}

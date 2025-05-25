@@ -41,7 +41,7 @@ const SOSTools = () => {
     return oscillator;
   };
 
-  // Start/Stop SOS Siren
+
   const toggleSiren = () => {
     if (sirenPlaying) {
       setSirenPlaying(false);
@@ -57,7 +57,7 @@ const SOSTools = () => {
     }
   };
 
-  // Emergency Timer
+
   const startEmergencyTimer = (seconds) => {
     setCountdown(seconds);
     countdownIntervalRef.current = setInterval(() => {
@@ -79,17 +79,16 @@ const SOSTools = () => {
     }
   };
 
-  // Trigger Emergency Alert
+
   const triggerEmergencyAlert = () => {
-    // Vibrate device
+
     if (navigator.vibrate) {
       navigator.vibrate([200, 100, 200, 100, 200]);
     }
     
-    // Play siren
+
     toggleSiren();
     
-    // Send emergency message (mock implementation)
     sendEmergencyMessage();
   };
 
@@ -100,7 +99,7 @@ const SOSTools = () => {
         (position) => {
           const message = `${customMessage}\nLatitude: ${position.coords.latitude}\nLongitude: ${position.coords.longitude}\nTime: ${new Date().toLocaleString()}`;
           
-          // Mock SMS sending (in real app, integrate with SMS API)
+          // Mock SMS sending (in real app, integrate with SMS API not yet implemented)
           console.log('Emergency message sent:', message);
           alert('Emergency alert sent to all contacts!');
         },
@@ -143,7 +142,7 @@ const SOSTools = () => {
     }
   };
 
-  // Flashlight (Camera Flash)
+
   const toggleFlashlight = async () => {
     try {
       if (!flashlightOn) {
@@ -174,12 +173,12 @@ const SOSTools = () => {
     }
   };
 
-  // Quick Call Function
+
   const quickCall = (number) => {
     window.location.href = `tel:${number}`;
   };
 
-  // Cleanup on unmount
+
   useEffect(() => {
     return () => {
       if (sirenAudioRef.current) {
@@ -194,7 +193,7 @@ const SOSTools = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 pt-20">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
+
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-red-600 mb-4">
             🆘 Emergency SOS Tools
@@ -204,7 +203,7 @@ const SOSTools = () => {
           </p>
         </div>
 
-        {/* Emergency Timer Alert */}
+
         {countdown && (
           <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
             <div className="bg-white rounded-xl p-8 text-center max-w-sm mx-4 shadow-2xl">

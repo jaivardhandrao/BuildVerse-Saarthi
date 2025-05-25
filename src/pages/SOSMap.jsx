@@ -11,7 +11,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-// Create pulsating circle icon based on urgency
+// Create pulsating circle
 const createPulsatingIcon = (urgency) => {
   const getColorConfig = () => {
     switch(urgency?.toLowerCase()) {
@@ -93,9 +93,9 @@ const SOSMap = () => {
   const [locationLoading, setLocationLoading] = useState(false);
   const mapRef = useRef(null);
 
-  // Google Sheets CSV URL
+
   const GOOGLE_SHEET_CSV_URL = import.meta.env.VITE_GOOGLE_SHEET_CSV_URL;
-  // Get current location
+
   const getCurrentLocation = () => {
     setLocationLoading(true);
     if (navigator.geolocation) {
@@ -160,11 +160,11 @@ const SOSMap = () => {
     loadSOSData();
     
     // Refresh data every 30 seconds for real-time updates
-    const interval = setInterval(loadSOSData, 30000);
+    const interval = setInterval(loadSOSData, 3000000);
     return () => clearInterval(interval);
   }, []);
 
-  // CSV Parser function
+
   const parseCSV = (csvText) => {
     const lines = csvText.trim().split('\n');
     const headers = lines[0].split(',').map(header => header.trim().replace(/"/g, ''));
@@ -177,11 +177,11 @@ const SOSMap = () => {
         request[header] = values[i] ? values[i].trim().replace(/"/g, '') : '';
       });
       
-      // Map the data to our structure
+
       const lat = parseFloat(request.Latitude);
       const lng = parseFloat(request.Longitude);
       
-      // Only include requests with valid coordinates
+
       if (isNaN(lat) || isNaN(lng) || lat === 0 || lng === 0) {
         return null;
       }
@@ -201,7 +201,7 @@ const SOSMap = () => {
     }).filter(request => request !== null);
   };
 
-  // Helper function to parse CSV line with proper comma handling
+  // Helper function
   const parseCSVLine = (line) => {
     const result = [];
     let current = '';
@@ -228,7 +228,7 @@ const SOSMap = () => {
   const urgencyLevels = ['All', ...new Set(sosRequests.map(req => req.urgency))];
   const statusTypes = ['All', ...new Set(sosRequests.map(req => req.status))];
 
-  // Filter requests based on selected filters
+
   useEffect(() => {
     let filtered = sosRequests;
     
@@ -243,14 +243,14 @@ const SOSMap = () => {
     setFilteredRequests(filtered);
   }, [filterUrgency, filterStatus, sosRequests]);
 
-  // Handle marker click - open Google Maps
+
   const handleRequestClick = (request) => {
     setSelectedRequest(request);
     const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${request.lat},${request.lng}&query_place_id=${encodeURIComponent(request.description)}`;
     window.open(googleMapsUrl, '_blank');
   };
 
-  // Map click handler to clear selection
+
   const MapEvents = () => {
     useMapEvents({
       click: () => {
@@ -260,7 +260,7 @@ const SOSMap = () => {
     return null;
   };
 
-  // Component to handle map reference
+
   const MapController = () => {
     const map = useMapEvents({});
     
@@ -313,7 +313,7 @@ const SOSMap = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4">
-      {/* Custom CSS for pulsating markers */}
+
       <style jsx>{`
         .custom-div-icon {
           background: transparent !important;
@@ -543,7 +543,7 @@ const SOSMap = () => {
                 </Marker>
               )}
               
-              {/* SOS Request Markers with Pulsating Circles */}
+
               {filteredRequests.map((request) => (
                 <Marker
                   key={request.id}
@@ -615,7 +615,6 @@ const SOSMap = () => {
           </div>
         </div>
 
-        {/* Rest of your component remains the same... */}
         {/* Request List */}
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-red-600 mb-6">Active SOS Requests</h2>
